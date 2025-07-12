@@ -2,14 +2,22 @@ import streamlit as st
 from streamlit_modal import Modal
 import pandas as pd
 from datetime import datetime
+import toml
 import gc, requests
 st.set_page_config(layout="wide")
 st.write("""
         ## 🤖 Chatbot
         """)
 
+# 讀取 config.toml
+config = toml.load("config.toml")
+
+# 使用設定值
+api_name = config["path"]["api"]
+channel_name = config["path"]['channel']
+
 def api( children, data):
-    api_urls = f'http://192.168.56.1:8005/streamlit/{children}'
+    api_urls = f'http://{api_name}:{channel_name}/streamlit/{children}'
     req = requests.post(api_urls, json = data)
     if req.status_code == 404:
         return pd.DataFrame()#req.content
