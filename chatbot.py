@@ -1,5 +1,5 @@
 import streamlit as st
-from streamlit_modal import Modal
+# from streamlit_modal import Modal
 import pandas as pd
 from datetime import datetime
 import toml
