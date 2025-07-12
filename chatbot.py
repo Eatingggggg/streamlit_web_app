@@ -2,7 +2,7 @@ import streamlit as st
 # from streamlit_modal import Modal
 import pandas as pd
 from datetime import datetime
-import toml
+# import toml
 import gc, requests
 st.set_page_config(layout="wide")
 st.write("""
