@@ -10,7 +10,7 @@ st.write("""
         """)
 
 # 讀取 config.toml
-config = toml.load("config.toml")
+config = toml.load("secrets.toml")
 
 # 使用設定值
 api_name = config["path"]["api"]
