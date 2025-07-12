@@ -9,12 +9,12 @@ st.write("""
         ## 🤖 Chatbot
         """)
 
-# 讀取 config.toml
-config = toml.load("secrets.toml")
+# # 讀取 config.toml
+# config = toml.load("secrets.toml")
 
 # 使用設定值
-api_name = config["path"]["api"]
-channel_name = config["path"]['channel']
+api_name = st.secrets["path"]["api"]
+channel_name = st.secrets["path"]['channel']
 
 def api( children, data):
     api_urls = f'http://{api_name}:{channel_name}/streamlit/{children}'
